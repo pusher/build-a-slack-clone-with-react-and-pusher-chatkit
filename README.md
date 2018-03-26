@@ -32,7 +32,7 @@ Perhaps the best way to learn Chatkit is to start building so I highly reccomend
 
 ## Steps
 
-There will be **12** steps in total. 
+This tutorial has been written so that you can follow along, step by step. There will be **12** steps in total. 
 
 Here's a quick rundown so you know what to expect:
 
