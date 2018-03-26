@@ -262,9 +262,7 @@ Starting from the top of `App.js`:
 
 ## Step 5. Render the chat screen
 
-At the moment, we render the `UsernameForm` and it occupies the entire screen:
-
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen.gif?raw=true)
+At the moment, we render the `UsernameForm` and it occupies the entire screen.
 
 Once the username has been submitted, we'll want to transition to a different screen - namely, the chat screen.
 
