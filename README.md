@@ -417,7 +417,7 @@ Now we have our boilerplate in place, we can rapidly start to build out chat fea
 
 Going forward, we'll break down each feature into indepdendant (reusable, if you want!) React components:
 
-[Illustration of the React component structure]
+![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/components.png?raw=true)
 
 We will create each component as we go along but to make the tutorial a bit easier to follow, let's set out the basic component layout now:
 
