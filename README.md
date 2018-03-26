@@ -806,7 +806,7 @@ export default ChatScreen
 * The `SendMessageForm` component is similar to the `WhatIsYourUsernameForm` component we defined earlier (just a standard React form)
 * When the form is submitted, we access `currentUser` via `this.state` and call `sendMessage` (remember, most interactions happen on `currentUser`)
 
-Hopefully you can start to see a pattern emerge. Our `ChatScreen` container manages our appliation state, which we update based on simple Chatkit events. 
+You can probably see a pattern emerging. `ChatScreen` is a _container component_ that manages our application state and renders the UI using presentational (normally stateless) components. The majoroty of our chat-related code is connecting Chatkit events to React state.
 
 ## Step 11. Add realtime typing indicators
 
