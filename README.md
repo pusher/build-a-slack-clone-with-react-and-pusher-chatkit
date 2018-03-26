@@ -257,7 +257,7 @@ Starting from the top of `App.js`:
 
 * First, we import the `UsernameForm` component. It probably looks familiar to you because it uses a common React pattern called controlled components. You can read more about controlled components and React forms [here](https://reactjs.org/docs/forms.html)
 * In the `render` function we - you guessed it - render the `UsernameForm` and hook up the `onUsernameSubmitted` event handler
-* When `onUsernameSubmitted` is called, we send a POST request to the `/users` route we just defined. If the request is successful, we update `this.state.username` so we can reference it later; otherwise, we `conosle.error` the error
+* When `onUsernameSubmitted` is called, we send a POST request to the `/users` route we just defined. If the request is successful, we update `this.state.username` so we can reference it later; otherwise, we `console.error` the error
 
 
 ## Step 5. Render the chat screen
@@ -803,7 +803,7 @@ export default ChatScreen
 ```
 
 
-The `SendMessageForm` component is essentially the same as  the`WhatIsYourUsernameForm` component we defined.
+The `SendMessageForm` component is essentially the same as  the`WhatIsYourUsernameForm` component we defined earlier.
 
 When the `SendMessageForm` is submitted, we access `this.state.currentUser` and call `sendMessage` (remember, most interactions happen on `currentUser`)
 
