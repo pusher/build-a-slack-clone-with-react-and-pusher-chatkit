@@ -24,7 +24,7 @@ However, because we'll be using [Chatkit](pusher.com/chatkit), we can more or le
 
 Using our cross-platform SDKs, all chat data is sent through our hosted API where we manage chat state and broadcast it to your clients:
 
-![](https://i.imgur.com/qybeCr6.jpg)
+![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/architecture.png?raw=true)
 
 You'll never have to worry about scale or infrastructure, we take care of it all for you.
 
