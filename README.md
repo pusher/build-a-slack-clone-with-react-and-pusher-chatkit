@@ -388,7 +388,7 @@ Remember to update **"YOUR INSTANCE LOCATOR"**.
 Again, starting from the top:
 
 * First, we import `Chatkit`
-* Then instantaite our Chatkit `ChatManager` with our `instanceLocator`, `userId` (from `this.props.currentUsername`), and a custom `TokenProvider`. The `TokenProvider` points to the `/authenticate` route, which we defined earlier
+* Then, instantaite our Chatkit `ChatManager` with our `instanceLocator`, `userId` (from `this.props.currentUsername`), and a custom `TokenProvider`. The `TokenProvider` points to the `/authenticate` route which we defined earlier
 * Once `ChatManager` has been initialised, we can call `connect`. `connect` happens asynchronously and a [`Promise`](https://developers.google.com/web/fundamentals/primers/promises) is returned. If you have followed these steps exaclty, you will connect. That being said, watch out for any `console.error`s in case you you missed something.
 
 ## Step 7. Create a Chatkit room
@@ -642,8 +642,8 @@ Let's break it down:
 * Chatkit is "user-driven" meaning most if not all interactions happen on the `currentUser`
 * In this case, we call `subscribeToRoom` on the `currentUser` (`currentUser.subscribeToRoom`)
 * `subscribeToRoom` takes an event handler called `onNewMessage` that is called in real-time each time a new message arrives
-* Because we specified the `messageLimit` to be `100`, `onNewMessage` is also called _retroactively_ for up to 100 most recent messages. In pracice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
-* There is a fair amount of code here but once you break it down, all we're doing is taking new messages and updating the React state. The significant chat-related code couldn't be more minimal
+* Because we specified the `messageLimit` to be `100`, `onNewMessage` is also called _retroactively_ for up to `100` most recent messages. In pracice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
+* There is a fair amount of code here but once you break it down, all we're doing is taking new messages and updating the React state - the significant chat-related code couldn't be more minimal
 
 ## Step 10. Sending messages
 
@@ -717,7 +717,7 @@ Next, let's allow users to send messages by first creating a `SendMessageForm.js
 + export default SendMessageForm
 ```
 
-Then  - you guessed it - update `ChatScreen.js`:
+Then - you guessed it - update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
@@ -803,10 +803,13 @@ export default ChatScreen
 ```
 
 
-* The `SendMessageForm` component is similar to the `WhatIsYourUsernameForm` component we defined earlier (just a standard React form)
-* When the form is submitted, we access `currentUser` via `this.state` and call `sendMessage` (remember, most interactions happen on `currentUser`)
+The `SendMessageForm` component is essentially the same as  the`WhatIsYourUsernameForm` component we defined.
 
-You can probably see a pattern emerging. `ChatScreen` is a _container component_ that manages our application state and renders the UI using presentational (normally stateless) components. The majoroty of our chat-related code is connecting Chatkit events to React state.
+When the `SendMessageForm` is submitted, we access `this.state.currentUser` and call `sendMessage` (remember, most interactions happen on `currentUser`)
+
+You can probably see a pattern emerging...
+
+`ChatScreen` is a _container component_ that manages our application state and renders the UI using presentational (normally stateless) components. Most of our code involves hooking up Chatkit events and data to UI components.
 
 ## Step 11. Add realtime typing indicators
 
@@ -947,9 +950,20 @@ class ChatScreen extends Component {
 export default ChatScreen
 ```
 
-* Typing indicators boil down to two fundamental actions: Calling `currentUser.userIsTyping` when the current user starts typing (normally `onChange`), and then listening to `userStartedTyping` and `userStoppedTyping` events
-* You don't have to tell Chatkit when when someone stops typing and this is by design. If Chatkit doesn't receive a `userIsTyping` event after a few seconds, it assumes the user has stopped typing. In practice, it's really slick...
-* It's also worth noting that `userStartedTyping` and `userStoppedTyping` events are never fired for the _current user_  - this is also by design. If your username is "John" and you start typing you'll never see "John is typing" but other users will
+When using Chatkit, typing indicators boil down to two fundamental actions: 
+
+* Calling `currentUser.userIsTyping` when the current user starts typing (normally you'll call it in `onChange`)
+* Listening to `userStartedTyping` and `userStoppedTyping` events
+
+And that is pretty much it.
+
+_"But Alex, what about when the user _stops_ typing?"_
+
+That is a very good point.
+
+If Chatkit doesn't receive a `userIsTyping` event after a few seconds it will assume that the user has stopped typing. Therefore there is no need to manually raise an event when the user stops typing . Slick!
+
+While we're here, it's  also worth noting that `userStartedTyping` and `userStoppedTyping` events are never fired for the _current user_  - this is also by design.
 
 
 ## Step 12. Add a "Who's online" list
@@ -1030,7 +1044,7 @@ Start by creating a `WhosOnlineList.js` component in `/src/components`:
 +export default WhosOnlineList
 ```
 
-Then - for the last time - update `ChatScreen.js`:
+Then - for the last time 😢👋 - update `ChatScreen.js`:
 
 
 ```diff
@@ -1153,10 +1167,11 @@ class ChatScreen extends Component {
 export default ChatScreen
 ```
 
-* With Chatkit you can always access a list of users and their online status with `currentRoom.users`. We manage all that state for you
-* When users come online (`userCameOnline`) or goes offline (`userWentOffline`) we call `forceUpdate` which makes React revaluate `currentRoom.users` and update the UI
-* We also need to call `forceUpdate` when new users join (`userJoined`)
+What's happening here then?
 
+* Rather than manage your own state you can instead use the `currentRoom.users` property which is always up-to-date and contains information about your current users and their online status
+* When users come online (`userCameOnline`) or go offline (`userWentOffline`) we call `forceUpdate` which makes React revaluate `currentRoom.users` and update the UI
+* We also need to call `forceUpdate` when new users join (`userJoined`)
 
 Again it really boils down to wiring some simple data and events to React components and that is all, folks!
 
