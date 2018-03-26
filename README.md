@@ -24,7 +24,7 @@ However, because we'll be using [Chatkit](pusher.com/chatkit), we can more or le
 
 Using our cross-platform SDKs, all chat data is sent through our hosted API where we manage chat state and broadcast it to your clients:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/architecture.png?raw=true)
+![](media/chatkit-overview.png)
 
 You'll never have to worry about scale or infrastructure, we take care of it all for you.
 
@@ -55,7 +55,7 @@ Alright, let's code!
 
 Rather than start from absoloute scratch, this walkthrough is based on a minimal starter template:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-26%20at%2014.00.33.png?raw=true)
+![](media/starter-template.png)
 
 As you can see, the starter template doesn't contain any interesting logic - just boilerplate we need to run a React application and a simple Node server. 
 
