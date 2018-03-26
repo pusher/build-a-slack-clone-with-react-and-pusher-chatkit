@@ -251,7 +251,7 @@ export default App
 
 Run the application using `npm start` and you'll see that the screen is rendered:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-26%20at%2011.25.50.png?raw=true)
+![](media/what-is-your-username-component.png)
 
 Starting from the top of `App.js`:
 
@@ -403,7 +403,7 @@ In the dashboard, head to the **Inspector** tab and create a user with any name.
 
 Then, create a room called "General":
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-26%20at%2011.33.34.png?raw=true)
+![](media/create-room.png)
 
 It is really important to note the unique **Room id** highlighted above. 
 
@@ -415,7 +415,7 @@ Now we have our boilerplate in place, we can rapidly start to build out chat fea
 
 Going forward, we'll break down each feature into indepdendant (reusable, if you want!) React components:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/components.png?raw=true)
+![](media/component-structure.png)
 
 We will create each component as we go along but to make the tutorial a bit easier to follow, let's set out the basic component layout now:
 
