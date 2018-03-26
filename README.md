@@ -37,17 +37,17 @@ This tutorial has been written so that you can follow along, step by step. There
 Here's a quick rundown so you know what to expect:
 
 1. [Download the React starter template](#step-1-download-the-react-starter-template)
-2. Create your own Chatkit instance
-3. Setup a basic Node sever
-4. Identifying the user
-5. Render the chat screen
-6. Connect to your Chatkit instance
-7. Create a Chatkit room
-8. Create a basic UI layout
-9. Subscribe to new messages
-10. Sending messages
-11. Add realtime typing indicators
-12. Add a "Who's online" list
+2. [Create your own Chatkit instance](#step-2-create-your-own-chatkit-instance)
+3. [Setup a basic Node sever](#step-3-setup-a-basic-node-sever)
+4. [Identifying the user](#step-4-identifying-the-user)
+5. [Render the chat screen](#step-5-render-the-chat-screen)
+6. [Connect to your Chatkit instance](#step-6-connect-to-your-chatkit-instance)
+7. [Create a Chatkit room](#step-7-create-a-chatkit-room)
+8. [Create a basic UI layout](#step-8-create-a-basic-ui-layout)
+9. [Subscribe to new messages](#step-9-subscribe-to-new-messages)
+10. [Sending messages](#step-10-sending-messages)
+11. [Add realtime typing indicators](#step-11-add-realtime-typing-indicators)
+12. [Add a "Who's online" list](#step-12-add-a-whos-online-list)
 
 Alright, let's code!
 
