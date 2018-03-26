@@ -86,7 +86,7 @@ Give your instance any name (I called mine "React Chat Tutorial") then take note
 
 ## Step 3. Setup a basic Node sever
 
-While most interactions will happen on the client, Chatkit also needs a server component to create and manage users securely:
+While most interactions will happen on the client, Chatkit also needs a server counterpart to create and manage users securely:
 
 ![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/intellisense2.png?raw=true)
 
