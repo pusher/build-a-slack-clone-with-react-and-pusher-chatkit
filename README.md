@@ -5,7 +5,7 @@ In this tutorial, you’ll learn how to build a chat app with React and [Chatkit
 
 When we're done, we'll have a chat application complete with **typing indicators**, a **"who's online" list**, and **message history**: 
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/demo.gif?raw=true)
+![](assets/final%20app.gif)
 
 If you think this sounds like a lot to tackle in one tutorial, you would normally be right! 
 
