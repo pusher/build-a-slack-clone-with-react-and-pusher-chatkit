@@ -1180,9 +1180,14 @@ Again it really boils down to wiring some simple data and events to React compon
 In this walkthrough, you built a complete chat application with 
 
 * group chat;
-* message history (refresh the page and you’ll see up to 100 of the most recent messages);
 * a “Who’s online” list; and,
 * typing indicators
+
+Because we used Chatkit, we also get some bonus features for free:
+
+* message history (refresh the page and you’ll see up to 100 of the most recent messages);
+* reliability in the case that the client temporarily loses connection (Chatkit handles disconnects gracefully); and,
+* the ability to scale without needing to worry about infrastructure
 
 We wrote a fair amount of code, but none of it was particularly complicated. Chatkit has a minimal but powerful API that manages all our chat data for us. All we have to do is take that data and render it for the user. 
 
