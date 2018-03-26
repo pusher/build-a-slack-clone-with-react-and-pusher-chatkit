@@ -642,8 +642,8 @@ Let's break it down:
 * Chatkit is "user-driven" meaning most if not all interactions happen on the `currentUser`
 * In this case, we call `subscribeToRoom` on the `currentUser` (`currentUser.subscribeToRoom`)
 * `subscribeToRoom` takes an event handler called `onNewMessage` that is called in real-time each time a new message arrives
-* Because we specified `100`, `onNewMessage` is also called _retroactively_ for up to 100 most recent messages. This allows you to effortlessly show your user their recent chat history
-* There is a fair amount of code here but once you break it down, all we're doing is taking new messages and updating the React state.  The significant chat-related code couldn't be more minimal
+* Because we specified the `messageLimit` to be `100`, `onNewMessage` is also called _retroactively_ for up to 100 most recent messages. In pracice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
+* There is a fair amount of code here but once you break it down, all we're doing is taking new messages and updating the React state. The significant chat-related code couldn't be more minimal
 
 ## Step 10. Sending messages
 
