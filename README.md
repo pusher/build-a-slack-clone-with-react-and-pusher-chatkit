@@ -13,7 +13,7 @@ However, because we'll be using [Chatkit](pusher.com/chatkit), we can more or le
 
 ## What is Chatkit?
 
-[Chatkit](pusher.com/chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
+[Chatkit](http://pusher.com/chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
 
 * Group chat
 * One-to-one chat
@@ -37,7 +37,7 @@ There will be **12** steps in total.
 Here's a quick rundown so you know what to expect:
 
 1. Download the React starter template
-2. Sign up and create your own Chatkit instance
+2. Create your own Chatkit instance
 3. Setup a basic Node sever
 4. Identifying the user
 5. Render the chat screen
@@ -55,9 +55,9 @@ Alright, let's code!
 
 Rather than start from absoloute scratch, this walkthrough is based on a minimal starter template:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-20%20at%2015.12.08.png?raw=true)
+![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-26%20at%2014.00.33.png?raw=true)
 
-As you will see, the starter template doesn't contain any interesting logic - just boilerplate we need to run a React application and a simple Node server. 
+As you can see, the starter template doesn't contain any interesting logic - just boilerplate we need to run a React application and a simple Node server. 
 
 > **"Sever? No one mentioned a server!"** If you're not too familiar with [Node](https://nodejs.org/en/), don't worry 😊. After the next section, we won't really touch the server.
 
@@ -72,15 +72,16 @@ npm install
 
 (This tutorial assumes the use of `npm`, but the equivalent `yarn` commands will work as well.)
 
-## Step 2. Sign up and create your own Chatkit instance
+## Step 2. Create your own Chatkit instance
 
 Now you've downloaded the starter template, let's create a Chatkit instance.
 
-To create your own Chatkit instance, [head to the dashboard](dash.pusher.com), hit **Create new** then give your instance a name. I will call mine “React Chat Tutorial”:
+To create your own Chatkit instance, [head to the dashboard](dash.pusher.com) and hit **Create new**:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-20%20at%2016.22.17.png?raw=true)
+![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/ScreenFlow.gif?raw=true)
+ 
+Give your instance any name (I called mine "React Chat Tutorial") then take note of your **Instance Locator** and **Secret Key**. We'll need them both in the next section.
 
-In the **Keys** tab, take note of your **Instance Locator** and **Key**. We'll need them both in the next section.
 
 
 ## Step 3. Setup a basic Node sever
