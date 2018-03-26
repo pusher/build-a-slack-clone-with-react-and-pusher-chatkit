@@ -15,6 +15,22 @@ However, because we'll be using [Chatkit](pusher.com/chatkit), we can more or le
 
 Before diving into this walkthrough, it would be good to have a basic understanding of [React](https://reactjs.org/tutorial/tutorial.html)
 
+## Steps
+
+There will be N steps in total. Here's a quick rundown so you know what to expect:
+
+1. Download the React starter template
+2. Sign up and create your own Chatkit instance
+3. Setup a basic Node sever
+4. Identifying the user
+5. Render the chat screen
+6. Connect to your Chatkit instance
+7. Create a Chatkit room
+8. Create a basic UI layout
+9. Subscribe to new messages
+10. Sending messages
+11. Add realtime typing indicators
+12. Add a "Who's online" list
 
 ## What is Chatkit?
 
@@ -37,7 +53,7 @@ Perhaps the best way to learn Chatkit is to start building so I highly reccomend
 
 Alright, let's code!
 
-## Step 1. Download the starter template
+## Step 1. Download the React starter template
 
 Rather than start from absoloute scratch, this walkthrough is based on a minimal starter template:
 
@@ -58,7 +74,7 @@ npm install
 
 (This tutorial assumes the use of `npm`, but the equivalent `yarn` commands will work as well.)
 
-## Step 2. Create a Chatkit instance
+## Step 2. Sign up and create your own Chatkit instance
 
 Now you've downloaded the starter template, let's create a Chatkit instance.
 
@@ -69,7 +85,7 @@ To create your own Chatkit instance, [head to the dashboard](dash.pusher.com), h
 In the **Keys** tab, take note of your **Instance Locator** and **Key**. We'll need them both in the next section.
 
 
-## Step 3. Setup the server
+## Step 3. Setup a basic Node sever
 
 While most interactions will happen on the client, Chatkit also needs a server component to create and manage users securely:
 
@@ -142,7 +158,7 @@ There's a lot to unpack here, starting from the top:
 
 Boom 💥! That's all we need to do on the server. Let's move on to the client...
 
-## Step 4. Login 
+## Step 4. Identifying the user
 
 When someone loads the app, we want to ask them who they are.
 
@@ -245,7 +261,7 @@ Starting from the top of `App.js`:
 * When `onUsernameSubmitted` is called, we send a POST request to the `/users` route we just defined. If the request is successful, we update `this.state.username` so we can reference it later; otherwise, we `conosle.error` the error
 
 
-## Step 5. Render ChatScreen
+## Step 5. Render the chat screen
 
 At the moment, we render the `UsernameForm` and it occupies the entire screen:
 
@@ -319,7 +335,7 @@ class App extends Component {
 export default App
 ```
 
-## Step 6. Connect to Chatkit
+## Step 6. Connect to your Chatkit instance
 
 Earlier, we installed `pusher-chatkit-server`. Now we're in client-land, you'll need to install [`@pusher/chatkit`](https://www.npmjs.com/package/@pusher/chatkit) as well:
 
@@ -394,7 +410,7 @@ Then, create a room called "General":
 
 It is really important to note the unique **Room id** highlighted above. 
 
-## Step 8. Component structure
+## Step 8. Create a basic UI layout
 
 This step marks a significant point in the walkthrough. 
 
@@ -489,7 +505,7 @@ If you run the app now, you'll see the basic layout take place:
 
 Awesome!
 
-## Step 9. Subscribe to messages
+## Step 9. Subscribe to new messages
 
 I am really excited to show you this!
 
@@ -795,7 +811,7 @@ export default ChatScreen
 
 Hopefully you can start to see a pattern emerge. Our `ChatScreen` container manages our appliation state, which we update based on simple Chatkit events. 
 
-## Step 11. Typing indicators
+## Step 11. Add realtime typing indicators
 
 If you've ever tired to implement your own typing indicators you'll know it can be tricky. In general, more real-time features means more data and more connections to manage. 
 
@@ -939,7 +955,7 @@ export default ChatScreen
 * It's also worth noting that `userStartedTyping` and `userStoppedTyping` events are never fired for the _current user_  - this is also by design. If your username is "John" and you start typing you'll never see "John is typing" but other users will
 
 
-## Step 10. Who's online 
+## Step 12. Add a "Who's online" list
 
 Can you feel the momentum? Almost done now 🙌
 
