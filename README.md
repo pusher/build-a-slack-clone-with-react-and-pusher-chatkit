@@ -251,7 +251,7 @@ export default App
 
 Run the application using `npm start` and you'll see that the screen is rendered:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-)
+![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-26%20at%2011.25.50.png?raw=true)
 
 Starting from the top of `App.js`:
 
