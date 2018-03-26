@@ -15,22 +15,7 @@ However, because we'll be using [Chatkit](pusher.com/chatkit), we can more or le
 
 Before diving into this walkthrough, it would be good to have a basic understanding of [React](https://reactjs.org/tutorial/tutorial.html)
 
-## Steps
 
-There will be N steps in total. Here's a quick rundown so you know what to expect:
-
-1. Download the React starter template
-2. Sign up and create your own Chatkit instance
-3. Setup a basic Node sever
-4. Identifying the user
-5. Render the chat screen
-6. Connect to your Chatkit instance
-7. Create a Chatkit room
-8. Create a basic UI layout
-9. Subscribe to new messages
-10. Sending messages
-11. Add realtime typing indicators
-12. Add a "Who's online" list
 
 ## What is Chatkit?
 
@@ -50,6 +35,23 @@ Using our cross-platform SDKs, all chat data is sent through our hosted API wher
 You'll never have to worry about scale or infrastructure, we take care of it all for you.
 
 Perhaps the best way to learn Chatkit is to start building so I highly reccomend you follow along. Along the way, you'll learn best practices when using Chatkit with React.
+
+## Steps
+
+There will be N steps in total. Here's a quick rundown so you know what to expect:
+
+1. Download the React starter template
+2. Sign up and create your own Chatkit instance
+3. Setup a basic Node sever
+4. Identifying the user
+5. Render the chat screen
+6. Connect to your Chatkit instance
+7. Create a Chatkit room
+8. Create a basic UI layout
+9. Subscribe to new messages
+10. Sending messages
+11. Add realtime typing indicators
+12. Add a "Who's online" list
 
 Alright, let's code!
 
