@@ -88,7 +88,7 @@ Give your instance any name (I called mine "React Chat Tutorial") then take note
 
 While most interactions will happen on the client, Chatkit also needs a server component to create and manage users securely:
 
-![](https://i.imgur.com/9elZ5SQ.jpg)
+![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/intellisense.png?raw=true)
 
 We won't authenticate users in this tutorial, but we'll still need to define a route that, when called, creates a Chatkit user.
 
