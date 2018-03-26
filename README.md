@@ -498,7 +498,7 @@ export default ChatScreen
 
 If you run the app now, you'll see the basic layout take place:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/Screen%20Shot%202018-03-26%20at%2012.32.47.png?raw=true)
+![](media/basic-layout.png)
 
 Awesome!
 
