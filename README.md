@@ -50,8 +50,9 @@ As you will see, the starter template doesn't contain any interesting logic - ju
 To get started, download the starter template then run `npm install`:
 
 ```
-git clone https://github.com/bookercodes/chatkit-react-tutorial chatkit-react-tutorial-template
-cd chatkit-react-tutorial-template
+git clone https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit chatkit-tutorial
+cd chatkit-tutorial
+git checkout tags/template
 npm install
 ```
 
