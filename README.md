@@ -78,7 +78,7 @@ Now you've downloaded the starter template, let's create a Chatkit instance.
 
 To create your own Chatkit instance, [head to the dashboard](dash.pusher.com) and hit **Create new**:
 
-![](https://github.com/bookercodes/pusher-chatkit-tut/blob/master/ScreenFlow.gif?raw=true)
+![](media/create-a-chatkit-instance.gif)
  
 Give your instance any name (I called mine "React Chat Tutorial") then take note of your **Instance Locator** and **Secret Key**. We'll need them both in the next section.
 
