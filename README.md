@@ -36,7 +36,7 @@ This tutorial has been written so that you can follow along, step by step. There
 
 Here's a quick rundown so you know what to expect:
 
-1. Download the React starter template
+1. [Download the React starter template](#step-1-download-the-react-starter-template)
 2. Create your own Chatkit instance
 3. Setup a basic Node sever
 4. Identifying the user
