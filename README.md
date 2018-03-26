@@ -1162,34 +1162,20 @@ Again it really boils down to wiring some simple data and events to React compon
 
 ## Conclusion
 
-TBD.
+In this walkthrough, you built a complete chat application with 
 
+* group chat;
+* message history (refresh the page and you’ll see up to 100 of the most recent messages);
+* a “Who’s online” list; and,
+* typing indicators
 
-Todo
+We wrote a fair amount of code, but none of it was particularly complicated. Chatkit has a minimal but powerful API that manages all our chat data for us. All we have to do is take that data and render it for the user. 
 
-* [ ] Record some animations
-* [ ] Create some diagrams
-* [ ] Update demo app to use new lib
-* [ ] Then update tutorial to use new code
-* [ ] Follow tutorial from beginning to end
-* [ ] Create empty `components` directory in template
+Want to keep building? Why not add rich media support and read receipts? Chatkit supports both:
 
-Other
+* [Read receipts](https://docs.pusher.com/chatkit/reference/javascript#cursors)
+* [File API](https://docs.pusher.com/chatkit/reference/javascript#attachment)
 
-* [ ] Need to mention the use of room ID somewhere
+You may also be interested in checking out [our powerful Chatkit Slack demo](https://github.com/pusher/chatkit-demo). It’s similar to the application we just built, but more complete.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**What will you build? We really can’t wait to see. Your feedback guides us in improving Chatkit. Let us know what helps you reach your goals, what’s getting in your way, or what’s missing.**
