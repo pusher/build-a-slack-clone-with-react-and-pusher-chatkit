@@ -36,7 +36,9 @@ Before diving into this walkthrough, it would be good to have a basic understand
 
 ## Steps
 
-There will be N steps in total. Here's a quick rundown so you know what to expect:
+There will be **12** steps in total. 
+
+Here's a quick rundown so you know what to expect:
 
 1. Download the React starter template
 2. Sign up and create your own Chatkit instance
