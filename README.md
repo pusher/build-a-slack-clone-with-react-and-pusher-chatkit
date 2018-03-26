@@ -30,10 +30,6 @@ You'll never have to worry about scale or infrastructure, we take care of it all
 
 Perhaps the best way to learn Chatkit is to start building so I highly reccomend you follow along. Along the way, you'll learn best practices when using Chatkit with React.
 
-## Good to know
-
-Before diving into this walkthrough, it would be good to have a basic understanding of [React](https://reactjs.org/tutorial/tutorial.html)
-
 ## Steps
 
 There will be **12** steps in total. 
