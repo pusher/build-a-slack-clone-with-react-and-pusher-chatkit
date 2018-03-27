@@ -76,7 +76,7 @@ npm install
 
 Now you've downloaded the starter template, let's create a Chatkit instance.
 
-To create your own Chatkit instance, [head to the dashboard](dash.pusher.com) and hit **Create new**:
+To create your own Chatkit instance, [head to the dashboard](https://dash.pusher.com) and hit **Create new**:
 
 ![](media/create-a-chatkit-instance.gif)
  
