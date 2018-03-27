@@ -66,9 +66,10 @@ To get started, download the starter template then run `npm install`:
 ```
 git clone https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit chatkit-tutorial
 cd chatkit-tutorial
-git checkout tags/template
 npm install
 ```
+
+> If you prefer to jump to the finished product rather than copy pasting then you can run `git checkout complete`.
 
 (This tutorial assumes the use of `npm`, but the equivalent `yarn` commands will work as well.)
 
