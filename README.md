@@ -1,7 +1,7 @@
 
 # Build a Chat App with React and Pusher Chatkit
 
-In this tutorial, you’ll learn how to build a chat app with React and [Chatkit](https://pusher.com/chatkit).
+In this tutorial, you’ll learn how to build a chat app with React and [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit).
 
 When we're done, we'll have a chat application complete with **typing indicators**, a **"who's online" list**, and **message history**:
 
@@ -9,11 +9,11 @@ When we're done, we'll have a chat application complete with **typing indicators
 
 If you think this sounds like a lot to tackle in one tutorial, you would normally be right!
 
-However, because we'll be using [Chatkit](pusher.com/chatkit), we can more or less focus exclusively on the front-end React code while Chatkit does the heavy lifting.
+However, because we'll be using [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit), we can more or less focus exclusively on the front-end React code while Chatkit does the heavy lifting.
 
 ## What is Chatkit?
 
-[Chatkit](http://pusher.com/chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
+[Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
 
 * Group chat
 * One-to-one chat
