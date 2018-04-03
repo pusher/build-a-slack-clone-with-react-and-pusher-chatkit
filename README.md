@@ -23,13 +23,13 @@ However, because we'll be using [Chatkit](https://pusher.com/chatkit?utm_source=
 * Read receipts
 * Photo, video, and audio messages
 
-Using our cross-platform SDKs, all chat data is sent through our hosted API where we manage chat state and broadcast it to your clients:
+Using our cross-platform SDKs, all chat data is sent to our hosted API where we manage chat state and broadcast it to your clients:
 
 ![](media/chatkit-overview.png)
 
 You'll never have to worry about scale or infrastructure, we take care of it all for you.
 
-Perhaps the best way to learn Chatkit is to start building so I highly reccomend you follow along. Along the way, you'll learn best practices when using Chatkit with React.
+Perhaps the best way to learn Chatkit is to start building so I highly recommend you follow along. Along the way, you'll learn best practices when using Chatkit with React.
 
 ## Steps
 
@@ -54,7 +54,7 @@ Alright, let's code!
 
 ## Step 1. Download the React starter template
 
-Rather than start from absoloute scratch, this walkthrough is based on a minimal starter template:
+Rather than start from absolute scratch, this walkthrough is based on a minimal starter template:
 
 ![](media/starter-template.png)
 
@@ -88,7 +88,7 @@ Give your instance any name (I called mine "React Chat Tutorial") then take note
 
 
 
-## Step 3. Setup a basic Node sever
+## Step 3. Setup a basic Node server
 
 While most interactions will happen on the client, Chatkit also needs a server counterpart to create and manage users securely:
 
@@ -155,7 +155,7 @@ Remember to replace **"YOUR INSTANCE LOCATOR"** and **"YOUR KEY"** with your own
 There's a lot to unpack here, starting from the top:
 
 * First, we import `Chatkit` from `pusher-chatkit-server`
-* Then, instantiate our own `chatkit` instance using the **Insance Locator** and **Key** we noted in the previous step
+* Then, instantiate our own `chatkit` instance using the **Instance Locator** and **Key** we noted in the previous step
 * In the `/users` route, we take a `username` and create a Chatkit user through our `chatkit` instance
 * Authentication is the action of proving a user is who she says she is. When someone first connects to Chatkit, a request will be sent to `/authenticate` to authenticate them. The server needs to respond with a token (returned by `chatkit.authenticate`) if the request is valid. In our case, we'll - naïvely - assume that everyone is who they say they are, and return a token from `chatkit.authenticate` no matter what
 
@@ -394,14 +394,14 @@ Remember to replace **"YOUR INSTANCE LOCATOR"** with yours that you noted earlie
 Again, starting from the top:
 
 * First, we import `Chatkit`
-* Then, instantaite our Chatkit `ChatManager` with our `instanceLocator`, `userId` (from `this.props.currentUsername`), and a custom `TokenProvider`. The `TokenProvider` points to the `/authenticate` route we defined earlier
-* Once `ChatManager` has been initialised, we can call `connect`. `connect` happens asynchronously and a [`Promise`](https://developers.google.com/web/fundamentals/primers/promises) is returned. If you've followed these steps exaclty, you will connect. That being said, watch out for any `console.error`s in case you you missed something
+* Then, instantiate our Chatkit `ChatManager` with our `instanceLocator`, `userId` (from `this.props.currentUsername`), and a custom `TokenProvider`. The `TokenProvider` points to the `/authenticate` route we defined earlier
+* Once `ChatManager` has been initialised, we can call `connect`. `connect` happens asynchronously and a [`Promise`](https://developers.google.com/web/fundamentals/primers/promises) is returned. If you've followed these steps exactly, you will connect. That being said, watch out for any `console.error`s in case you missed something
 
 ## Step 7. Create a Chatkit room
 
 When using Chatkit, all messages are sent to a Chatkit room.
 
-Rooms can be created programatically (on the sever or client using `createRoom`), or in the dashboard Inspector tab.
+Rooms can be created programmatically (on the server or client using `createRoom`), or in the dashboard Inspector tab.
 
 Creating rooms from the Inspector isn't really a good practice (it's mainly intended for testing) but for the purpose of this walkthrough, we'll do it anyway.
 
@@ -419,7 +419,7 @@ This step marks a significant point in the walkthrough.
 
 Now we have our boilerplate in place, we can rapidly start to build out chat features.
 
-Going forward, we'll break down each feature into indepdendant (reusable, if you want!) React components:
+Going forward, we'll break down each feature into independent (reusable, if you want!) React components:
 
 ![](media/component-structure.png)
 
@@ -649,7 +649,7 @@ Let's break it down:
 * Chatkit is "user-driven" meaning that most if not all interactions happen on the `currentUser`
 * In this case, we call `subscribeToRoom` on the `currentUser` (`currentUser.subscribeToRoom`)
 * `subscribeToRoom` takes an event handler called `onNewMessage` that is called in real-time each time a new message arrives
-* Because we specified the `messageLimit` to be `100`, `onNewMessage` is also called _retroactively_ for up to `100` most recent messages. In pracice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
+* Because we specified the `messageLimit` to be `100`, `onNewMessage` is also called _retroactively_ for up to `100` most recent messages. In practice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
 * There is a fair amount of code here but once you break it down, all we're doing is taking new messages and updating the React state - the significant chat-related code couldn't be more minimal
 
 ## Step 10. Sending messages
@@ -820,7 +820,7 @@ You can probably see a pattern emerging...
 
 ## Step 11. Add realtime typing indicators
 
-If you've ever tired to implement your own typing indicators, you'll know it can be tricky. In general, more real-time features means more data and more connections to manage.
+If you've ever attempted to implement your own typing indicators, you'll know it can be tricky. In general, more real-time features means more data and more connections to manage.
 
 With Chatkit, you can add typing indicators with little effort.
 
@@ -1172,9 +1172,9 @@ class ChatScreen extends Component {
 export default ChatScreen
 ```
 
-Managing the  state of your users in  React state can be a bit tricky so we manage it for you in `currentRoom.users`. 
+Managing the state of your users in  React state can be a bit tricky so we manage it for you in `currentRoom.users`. 
 
-As users  connect and disconnect, this property is dynamically updated. In other words, `currentRoom.users` should always refelect the current state of your chat app. 
+As users connect and disconnect, this property is dynamically updated. In other words, `currentRoom.users` should always refelect the current state of your chat app. 
 
 Therefore, when users come online (`userCameOnline`) or go offline (`userWentOffline`) all we have to do is call `forceUpdate` which tells React to evaluate  `currentRoom.usrs` and update the UI.
 
@@ -1203,6 +1203,6 @@ Want to keep building? Why not add rich media support and read receipts? Chatkit
 * [Read receipts](https://docs.pusher.com/chatkit/reference/javascript#cursors)
 * [File API](https://docs.pusher.com/chatkit/reference/javascript#attachment)
 
-You may also be interested in checking out [our powerful Chatkit Slack demo](https://github.com/pusher/chatkit-demo). It’s similar to the application we just built, but more complete.
+You may also be interested in checking out [our powerful Chatkit Slack demo](https://github.com/pusher/chatkit-demo). It’s similar to the application we just built but more complete.
 
 **What will you build with Chatkit? We really can’t wait to see. Your feedback guides us in improving Chatkit. Let us know what helps you reach your goals, what’s getting in your way, or what’s missing.**
