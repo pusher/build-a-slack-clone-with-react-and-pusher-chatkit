@@ -1,6 +1,11 @@
 
 # Build a Chat App with React and Pusher Chatkit
 
+[![Star on GitHub][github-star-badge]][github-star]
+
+[github-star-badge]: https://img.shields.io/github/stars/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit
+[github-star]: https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit/stargazers
+
 In this tutorial, you’ll learn how to build a chat app with React and [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit).
 
 When we're done, we'll have a chat application complete with **typing indicators**, a **"who's online" list**, and **message history**:
