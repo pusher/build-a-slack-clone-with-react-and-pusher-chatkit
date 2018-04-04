@@ -1203,6 +1203,6 @@ Want to keep building? Why not add rich media support and read receipts? Chatkit
 * [Read receipts](https://docs.pusher.com/chatkit/reference/javascript#cursors)
 * [File API](https://docs.pusher.com/chatkit/reference/javascript#attachment)
 
-You may also be interested in checking out [our powerful Chatkit Slack demo](https://github.com/pusher/chatkit-demo). It’s similar to the application we just built but more complete.
+You may also be interested in checking out [our powerful Chatkit Slack demo](https://github.com/pusher/react-slack-clone) ([250+ stars ⭐️](https://github.com/pusher/react-slack-clone/stargazers)). It’s similar to the application we just built but more complete.
 
 **What will you build with Chatkit? We'd love to see! Your feedback guides us in improving Chatkit. Let us know what helps you reach your goals, what’s getting in your way, or what’s missing.**
