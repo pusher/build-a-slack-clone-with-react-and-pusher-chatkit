@@ -39,7 +39,7 @@ Here's a quick rundown so you know what to expect:
 
 1. [Download the React starter template](#step-1-download-the-react-starter-template)
 2. [Create your own Chatkit instance](#step-2-create-your-own-chatkit-instance)
-3. [Setup a basic Node sever](#step-3-setup-a-basic-node-sever)
+3. [Setup a basic Node server](#step-3-setup-a-basic-node-server)
 4. [Identifying the user](#step-4-identifying-the-user)
 5. [Render the chat screen](#step-5-render-the-chat-screen)
 6. [Connect to your Chatkit instance](#step-6-connect-to-your-chatkit-instance)
@@ -60,7 +60,7 @@ Rather than start from absolute scratch, this walkthrough is based on a minimal 
 
 As you can see, the starter template doesn't contain any interesting logic - just boilerplate we need to run a React application and a simple Node server.
 
-> **"Sever? No one mentioned a server!"** 
+> **"Server? No one mentioned a server!"** 
 >
 > If you're not too familiar with [Node](https://nodejs.org/en/), don't worry 😊. After the next section, we won't need to touch the server.
 
@@ -1205,4 +1205,4 @@ Want to keep building? Why not add rich media support and read receipts? Chatkit
 
 You may also be interested in checking out [our powerful Chatkit Slack demo](https://github.com/pusher/chatkit-demo). It’s similar to the application we just built but more complete.
 
-**What will you build with Chatkit? We really can’t wait to see. Your feedback guides us in improving Chatkit. Let us know what helps you reach your goals, what’s getting in your way, or what’s missing.**
+**What will you build with Chatkit? We'd love to see! Your feedback guides us in improving Chatkit. Let us know what helps you reach your goals, what’s getting in your way, or what’s missing.**
