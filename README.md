@@ -1,5 +1,5 @@
 
-# Build a Chat App with React and Pusher Chatkit
+# Build a Slack Clone with React and Pusher Chatkit
 
 [![Star on GitHub][github-star-badge]][github-star]
 
