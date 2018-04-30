@@ -33,7 +33,7 @@ class ChatScreen extends Component {
 
   componentDidMount() {
     const chatManager = new Chatkit.ChatManager({
-      instanceLocator: 'v1:us1:fb1c7acd-50cb-4ed0-93c8-4854df1f3d13',
+      instanceLocator: 'v1:us1:ac693f4f-a223-4fb8-9cae-d2de840aaba0',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
         url: 'http://localhost:3001/authenticate',
@@ -45,7 +45,7 @@ class ChatScreen extends Component {
       .then(currentUser => {
         this.setState({ currentUser })
         return currentUser.subscribeToRoom({
-          roomId: 6042843,
+          roomId: 7043716,
           messageLimit: 100,
           hooks: {
             onNewMessage: message => {
