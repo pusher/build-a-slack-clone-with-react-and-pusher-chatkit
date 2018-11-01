@@ -349,17 +349,17 @@ Rather than use a router, we conditionally render the screen based on `this.stat
 
 ## Step 6. Connect to your Chatkit instance
 
-Earlier, we installed `@pusher/chatkit-server`. Now we're in client-land, you'll need to install [`@pusher/chatkit`](https://www.npmjs.com/package/@pusher/chatkit) as well:
+Earlier, we installed `@pusher/chatkit-server`. Now we're in client-land, you'll need to install [`@pusher/chatkit-client`](https://www.npmjs.com/package/@pusher/chatkit-client) as well:
 
 ```
-npm install --save @pusher/chatkit
+npm install --save @pusher/chatkit-client
 ```
 
 Then update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-+import Chatkit from '@pusher/chatkit'
++import Chatkit from '@pusher/chatkit-client'
 
 class ChatScreen extends Component {
 +  constructor(props) {
@@ -436,7 +436,7 @@ We will create each component as we go along, but to make the tutorial a bit eas
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 
 class ChatScreen extends Component {
   constructor(props) {
@@ -578,7 +578,7 @@ Then update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 +import MessageList from './components/MessageList'
 
 
@@ -736,7 +736,7 @@ Then - you guessed it - update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 + import SendMessageForm from './components/SendMessageForm'
 
@@ -859,7 +859,7 @@ Then update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 import SendMessageForm from './components/SendMessageForm'
 +import TypingIndicator from './components/TypingIndicator'
@@ -1062,7 +1062,7 @@ Then - for the last time 😢👋 - update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 import SendMessageForm from './components/SendMessageForm'
 import TypingIndicator from './components/TypingIndicator'
