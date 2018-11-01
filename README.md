@@ -933,8 +933,6 @@ class ChatScreen extends Component {
       .catch(error => console.error('error', error))
   }
 
-
-
   render() {
     const styles = {
       ...
@@ -1128,8 +1126,7 @@ class ChatScreen extends Component {
                 ),
               })
             },
-+            onUserCameOnline: () => this.forceUpdate(),
-+            onUserWentOffline: () => this.forceUpdate(),
++            onPresenceChange: () => this.forceUpdate(),
 +            onUserJoined: () => this.forceUpdate(),
 +          },
         })
@@ -1139,9 +1136,6 @@ class ChatScreen extends Component {
       })
       .catch(error => console.error('error', error))
   }
-
-
-
 
   render() {
     const styles = {
@@ -1184,7 +1178,7 @@ Managing the state of your users in  React state can be a bit tricky so we manag
 
 As users connect and disconnect, this property is dynamically updated. In other words, `currentRoom.users` should always refelect the current state of your chat app.
 
-Therefore, when users come online (`userCameOnline`) or go offline (`userWentOffline`) all we have to do is call `forceUpdate` which tells React to evaluate  `currentRoom.usrs` and update the UI.
+Therefore, when users come online or go offline (`onPresenceChange`), or new users join (`onUserAdded`) all we have to do is call `forceUpdate` which tells React to evaluate `currentRoom.users` and update the UI.
 
 Again, it really boils down to wiring some simple data and events to React components and that's all, folks!
 
