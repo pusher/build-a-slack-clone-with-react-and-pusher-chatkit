@@ -3,10 +3,10 @@
 
 [![Star on GitHub][github-star-badge]][github-star]
 
-[github-star-badge]: https://img.shields.io/github/stars/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit.svg?style=social
-[github-star]: https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit/stargazers
+[github-star-badge]: https://img.shields.io/github/stars/pusher/build-a-slack-clone-with-react-and-pusher-chatkit.svg?style=social
+[github-star]: https://github.com/pusher/build-a-slack-clone-with-react-and-pusher-chatkit/stargazers
 
-In this tutorial, you’ll learn how to build a chat app with React and [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit).
+In this tutorial, you’ll learn how to build a chat app with React and [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit).
 
 When we're done, we'll have a chat application complete with **typing indicators**, a **"who's online" list**, and **message history**:
 
@@ -14,11 +14,11 @@ When we're done, we'll have a chat application complete with **typing indicators
 
 If you think this sounds like a lot to tackle in one tutorial, you'd normally be right!
 
-However, because we'll be using [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit), we can more or less focus exclusively on the front-end React code while Chatkit does the heavy lifting.
+However, because we'll be using [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit), we can more or less focus exclusively on the front-end React code while Chatkit does the heavy lifting.
 
 ## What is Chatkit?
 
-[Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
+[Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
 
 * Group chat
 * One-to-one chat
@@ -72,12 +72,12 @@ As you can see, the starter template doesn't contain any interesting logic - jus
 To get started, download the starter template then run `npm install`:
 
 ```
-git clone https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit chatkit-tutorial
+git clone https://github.com/pusher/build-a-slack-clone-with-react-and-pusher-chatkit chatkit-tutorial
 cd chatkit-tutorial
 npm install
 ```
 
-(Note: To see the completed code, you can [view the `completed` branch](https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit/tree/complete) or run `git checkout complete` locally.)
+(Note: To see the completed code, you can [view the `completed` branch](https://github.com/pusher/build-a-slack-clone-with-react-and-pusher-chatkit/tree/complete) or run `git checkout complete` locally.)
 
 (Also note: This tutorial assumes the use of `npm`, but the equivalent `yarn` commands will work as well.)
 
@@ -85,7 +85,7 @@ npm install
 
 Now you've downloaded the starter template, let's create a Chatkit instance.
 
-To create your own Chatkit instance, [head to the dashboard](https://dash.pusher.com/?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit) and hit **Create new**:
+To create your own Chatkit instance, [head to the dashboard](https://dash.pusher.com/?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit) and hit **Create new**:
 
 ![](media/create-a-chatkit-instance.gif)
 
