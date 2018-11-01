@@ -101,10 +101,10 @@ While most interactions will happen on the client, Chatkit also needs a server c
 
 We won't authenticate users in this tutorial, but we'll still need to define a route that, when called, creates a Chatkit user.
 
-Start by installing [`pusher-chatkit-server`](https://www.npmjs.com/package/pusher-chatkit-server):
+Start by installing [`@pusher/chatkit-server`](https://www.npmjs.com/package/@pusher/chatkit-server):
 
 ```
-npm install --save pusher-chatkit-server
+npm install --save @pusher/chatkit-server
 ```
 
 Then update `./server.js`:
@@ -113,7 +113,7 @@ Then update `./server.js`:
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-+const Chatkit = require('pusher-chatkit-server')
++const Chatkit = require('@pusher/chatkit-server')
 
 const app = express()
 
@@ -163,7 +163,7 @@ Remember to replace **"YOUR INSTANCE LOCATOR"** and **"YOUR KEY"** with your own
 
 There's a lot to unpack here, starting from the top:
 
-* First, we import `Chatkit` from `pusher-chatkit-server`
+* First, we import `Chatkit` from `@pusher/chatkit-server`
 * Then, instantiate our own `chatkit` instance using the **Instance Locator** and **Key** we noted in the previous step
 * In the `/users` route, we take a `username` and create a Chatkit user through our `chatkit` instance
 * Authentication is the action of proving a user is who she says she is. When someone first connects to Chatkit, a request will be sent to `/authenticate` to authenticate them. The server needs to respond with a token (returned by `chatkit.authenticate`) if the request is valid. In our case, we'll - naïvely - assume that everyone is who they say they are, and return a token from `chatkit.authenticate` no matter what
@@ -349,7 +349,7 @@ Rather than use a router, we conditionally render the screen based on `this.stat
 
 ## Step 6. Connect to your Chatkit instance
 
-Earlier, we installed `pusher-chatkit-server`. Now we're in client-land, you'll need to install [`@pusher/chatkit`](https://www.npmjs.com/package/@pusher/chatkit) as well:
+Earlier, we installed `@pusher/chatkit-server`. Now we're in client-land, you'll need to install [`@pusher/chatkit`](https://www.npmjs.com/package/@pusher/chatkit) as well:
 
 ```
 npm install --save @pusher/chatkit
