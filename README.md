@@ -3,10 +3,10 @@
 
 [![Star on GitHub][github-star-badge]][github-star]
 
-[github-star-badge]: https://img.shields.io/github/stars/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit.svg?style=social
-[github-star]: https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit/stargazers
+[github-star-badge]: https://img.shields.io/github/stars/pusher/build-a-slack-clone-with-react-and-pusher-chatkit.svg?style=social
+[github-star]: https://github.com/pusher/build-a-slack-clone-with-react-and-pusher-chatkit/stargazers
 
-In this tutorial, you’ll learn how to build a chat app with React and [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit).
+In this tutorial, you’ll learn how to build a chat app with React and [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit).
 
 When we're done, we'll have a chat application complete with **typing indicators**, a **"who's online" list**, and **message history**:
 
@@ -14,11 +14,11 @@ When we're done, we'll have a chat application complete with **typing indicators
 
 If you think this sounds like a lot to tackle in one tutorial, you'd normally be right!
 
-However, because we'll be using [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit), we can more or less focus exclusively on the front-end React code while Chatkit does the heavy lifting.
+However, because we'll be using [Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit), we can more or less focus exclusively on the front-end React code while Chatkit does the heavy lifting.
 
 ## What is Chatkit?
 
-[Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
+[Chatkit](https://pusher.com/chatkit?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit) is a hosted API that helps you build impressive chat features into your applications with less code. Features like,
 
 * Group chat
 * One-to-one chat
@@ -65,19 +65,19 @@ Rather than start from absolute scratch, this walkthrough is based on a minimal 
 
 As you can see, the starter template doesn't contain any interesting logic - just boilerplate we need to run a React application and a simple Node server.
 
-> **"Server? No one mentioned a server!"** 
+> **"Server? No one mentioned a server!"**
 >
 > If you're not too familiar with [Node](https://nodejs.org/en/), don't worry 😊. After the next section, we won't need to touch the server.
 
 To get started, download the starter template then run `npm install`:
 
 ```
-git clone https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit chatkit-tutorial
+git clone https://github.com/pusher/build-a-slack-clone-with-react-and-pusher-chatkit chatkit-tutorial
 cd chatkit-tutorial
 npm install
 ```
 
-(Note: To see the completed code, you can [view the `completed` branch](https://github.com/bookercodes/build-a-chat-app-with-react-and-pusher-chatkit/tree/complete) or run `git checkout complete` locally.)
+(Note: To see the completed code, you can [view the `completed` branch](https://github.com/pusher/build-a-slack-clone-with-react-and-pusher-chatkit/tree/complete) or run `git checkout complete` locally.)
 
 (Also note: This tutorial assumes the use of `npm`, but the equivalent `yarn` commands will work as well.)
 
@@ -85,7 +85,7 @@ npm install
 
 Now you've downloaded the starter template, let's create a Chatkit instance.
 
-To create your own Chatkit instance, [head to the dashboard](https://dash.pusher.com/?utm_source=github&utm_campaign=build-a-chat-app-with-react-and-pusher-chatkit) and hit **Create new**:
+To create your own Chatkit instance, [head to the dashboard](https://dash.pusher.com/?utm_source=github&utm_campaign=build-a-slack-clone-with-react-and-pusher-chatkit) and hit **Create new**:
 
 ![](media/create-a-chatkit-instance.gif)
 
@@ -101,10 +101,10 @@ While most interactions will happen on the client, Chatkit also needs a server c
 
 We won't authenticate users in this tutorial, but we'll still need to define a route that, when called, creates a Chatkit user.
 
-Start by installing [`pusher-chatkit-server`](https://www.npmjs.com/package/pusher-chatkit-server):
+Start by installing [`@pusher/chatkit-server`](https://www.npmjs.com/package/@pusher/chatkit-server):
 
 ```
-npm install --save pusher-chatkit-server
+npm install --save @pusher/chatkit-server
 ```
 
 Then update `./server.js`:
@@ -113,7 +113,7 @@ Then update `./server.js`:
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-+const Chatkit = require('pusher-chatkit-server')
++const Chatkit = require('@pusher/chatkit-server')
 
 const app = express()
 
@@ -129,10 +129,10 @@ app.use(cors())
 +app.post('/users', (req, res) => {
 +  const { username } = req.body
 +  chatkit
-+    .createUser({ 
-+	id: username, 
-+	name: username 
-+     })
++    .createUser({
++      id: username,
++      name: username
++    })
 +    .then(() => res.sendStatus(201))
 +    .catch(error => {
 +      if (error.error_type === 'services/chatkit/user_already_exists') {
@@ -163,7 +163,7 @@ Remember to replace **"YOUR INSTANCE LOCATOR"** and **"YOUR KEY"** with your own
 
 There's a lot to unpack here, starting from the top:
 
-* First, we import `Chatkit` from `pusher-chatkit-server`
+* First, we import `Chatkit` from `@pusher/chatkit-server`
 * Then, instantiate our own `chatkit` instance using the **Instance Locator** and **Key** we noted in the previous step
 * In the `/users` route, we take a `username` and create a Chatkit user through our `chatkit` instance
 * Authentication is the action of proving a user is who she says she is. When someone first connects to Chatkit, a request will be sent to `/authenticate` to authenticate them. The server needs to respond with a token (returned by `chatkit.authenticate`) if the request is valid. In our case, we'll - naïvely - assume that everyone is who they say they are, and return a token from `chatkit.authenticate` no matter what
@@ -279,13 +279,13 @@ At the moment, we render the `UsernameForm` and it occupies the entire screen (s
 
 Once the username has been submitted, we'll want to transition to a different screen - namely, the chat screen.
 
-To do that, we first need to create a `ChatsScreen.js` component in `./src`:
+To do that, we first need to create a `ChatScreen.js` component in `./src`:
 
 
 ```diff
 +import React, { Component } from 'react'
 +
-+class ChatScreen extends Component {  
++class ChatScreen extends Component {
 +  render() {
 +    return (
 +      <div>
@@ -303,7 +303,7 @@ Then update `App.js`:
 ```diff
 import React, { Component } from 'react'
 import UsernameForm from './components/UsernameForm'
-+ import ChatScreen from './ChatScreen'
++import ChatScreen from './ChatScreen'
 
 class App extends Component {
   constructor() {
@@ -349,17 +349,17 @@ Rather than use a router, we conditionally render the screen based on `this.stat
 
 ## Step 6. Connect to your Chatkit instance
 
-Earlier, we installed `pusher-chatkit-server`. Now we're in client-land, you'll need to install [`@pusher/chatkit`](https://www.npmjs.com/package/@pusher/chatkit) as well:
+Earlier, we installed `@pusher/chatkit-server`. Now we're in client-land, you'll need to install [`@pusher/chatkit-client`](https://www.npmjs.com/package/@pusher/chatkit-client) as well:
 
 ```
-npm install --save @pusher/chatkit
+npm install --save @pusher/chatkit-client
 ```
 
 Then update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-+import Chatkit from '@pusher/chatkit'
++import Chatkit from '@pusher/chatkit-client'
 
 class ChatScreen extends Component {
 +  constructor(props) {
@@ -410,11 +410,11 @@ Again, starting from the top:
 
 When using Chatkit, all messages are sent to a Chatkit room.
 
-Rooms can be created programmatically (on the server or client using `createRoom`), or in the dashboard Inspector tab.
+Rooms can be created programmatically (on the server or client using `createRoom`), or in the dashboard Inspector.
 
 Creating rooms from the Inspector isn't really a good practice (it's mainly intended for testing) but for the purpose of this walkthrough, we'll do it anyway.
 
-In the dashboard, head to the **Inspector** tab and create a user with any name. I will call mine "Admin".
+In the dashboard, head to the **Console** tab, where you'll find the Inspector and create a user with any name. I will call mine "Admin".
 
 Then, create a room called "General":
 
@@ -436,7 +436,7 @@ We will create each component as we go along, but to make the tutorial a bit eas
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 
 class ChatScreen extends Component {
   constructor(props) {
@@ -501,7 +501,7 @@ class ChatScreen extends Component {
 +            <h2>Who's online PLACEHOLDER</h2>
 +          </aside>
 +          <section style={styles.chatListContainer}>
-+            <h2>Chat PLACEHOLDER</h2>         
++            <h2>Chat PLACEHOLDER</h2>
 +          </section>
 +        </div>
 +      </div>
@@ -578,7 +578,7 @@ Then update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 +import MessageList from './components/MessageList'
 
 
@@ -606,10 +606,10 @@ class ChatScreen extends Component {
       .then(currentUser => {
         this.setState({ currentUser })
 +        return currentUser.subscribeToRoom({
-+          roomId: YOUR ROOM ID,
++          roomId: "YOUR ROOM ID",
 +          messageLimit: 100,
 +          hooks: {
-+            onNewMessage: message => {
++            onMessage: message => {
 +              this.setState({
 +                messages: [...this.state.messages, message],
 +              })
@@ -631,7 +631,7 @@ class ChatScreen extends Component {
       <div style={styles.container}>
         <div style={styles.chatContainer}>
           <aside style={styles.whosOnlineListContainer}>
-			<h2>Who's online PLACEHOLDER</h2>
+            <h2>Who's online PLACEHOLDER</h2>
           </aside>
           <section style={styles.chatListContainer}>
 -            <h2>Chat PLACEHOLDER</h2>
@@ -647,7 +647,6 @@ class ChatScreen extends Component {
 }
 
 export default ChatScreen
-
 ```
 
 Remember to replace **YOUR ROOM ID** with your own room ID that you noted earlier.
@@ -657,8 +656,8 @@ Let's break it down:
 * Once you connect to Chatkit you get a `currentUser` object that represents the current connected user
 * Chatkit is "user-driven" meaning that most if not all interactions happen on the `currentUser`
 * In this case, we call `subscribeToRoom` on the `currentUser` (`currentUser.subscribeToRoom`)
-* `subscribeToRoom` takes an event handler called `onNewMessage` that is called in real-time each time a new message arrives
-* Because we specified the `messageLimit` to be `100`, `onNewMessage` is also called _retroactively_ for up to `100` most recent messages. In practice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
+* `subscribeToRoom` takes an event handler called `onMessage` that is called in real-time each time a new message arrives
+* Because we specified the `messageLimit` to be `100`, `onMessage` is also called _retroactively_ for up to `100` most recent messages. In practice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
 * There is a fair amount of code here but once you break it down, all we're doing is taking new messages and updating the React state - the significant chat-related code couldn't be more minimal
 
 ## Step 10. Sending messages
@@ -737,7 +736,7 @@ Then - you guessed it - update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 + import SendMessageForm from './components/SendMessageForm'
 
@@ -777,7 +776,7 @@ class ChatScreen extends Component {
           roomId: YOUR ROOM ID,
           messageLimit: 100,
           hooks: {
-            onNewMessage: message => {
+            onMessage: message => {
               this.setState({
                 messages: [...this.state.messages, message],
               })
@@ -800,7 +799,7 @@ class ChatScreen extends Component {
       <div style={styles.container}>
         <div style={styles.chatContainer}>
           <aside style={styles.whosOnlineListContainer}>
-			<h2>Who's online PLACEHOLDER</h2>
+            <h2>Who's online PLACEHOLDER</h2>
           </aside>
           <section style={styles.chatListContainer}>
             <MessageList
@@ -860,7 +859,7 @@ Then update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 import SendMessageForm from './components/SendMessageForm'
 +import TypingIndicator from './components/TypingIndicator'
@@ -908,7 +907,7 @@ class ChatScreen extends Component {
           roomId: YOUR ROOM ID,
           messageLimit: 100,
           hooks: {
-            onNewMessage: message => {
+            onMessage: message => {
               this.setState({
                 messages: [...this.state.messages, message],
               })
@@ -933,8 +932,6 @@ class ChatScreen extends Component {
       })
       .catch(error => console.error('error', error))
   }
-
-
 
   render() {
     const styles = {
@@ -1063,7 +1060,7 @@ Then - for the last time 😢👋 - update `ChatScreen.js`:
 
 ```diff
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 import SendMessageForm from './components/SendMessageForm'
 import TypingIndicator from './components/TypingIndicator'
@@ -1129,8 +1126,7 @@ class ChatScreen extends Component {
                 ),
               })
             },
-+            onUserCameOnline: () => this.forceUpdate(),
-+            onUserWentOffline: () => this.forceUpdate(),
++            onPresenceChange: () => this.forceUpdate(),
 +            onUserJoined: () => this.forceUpdate(),
 +          },
         })
@@ -1140,9 +1136,6 @@ class ChatScreen extends Component {
       })
       .catch(error => console.error('error', error))
   }
-
-
-
 
   render() {
     const styles = {
@@ -1181,11 +1174,11 @@ class ChatScreen extends Component {
 export default ChatScreen
 ```
 
-Managing the state of your users in  React state can be a bit tricky so we manage it for you in `currentRoom.users`. 
+Managing the state of your users in  React state can be a bit tricky so we manage it for you in `currentRoom.users`.
 
-As users connect and disconnect, this property is dynamically updated. In other words, `currentRoom.users` should always refelect the current state of your chat app. 
+As users connect and disconnect, this property is dynamically updated. In other words, `currentRoom.users` should always refelect the current state of your chat app.
 
-Therefore, when users come online (`userCameOnline`) or go offline (`userWentOffline`) all we have to do is call `forceUpdate` which tells React to evaluate  `currentRoom.usrs` and update the UI.
+Therefore, when users come online or go offline (`onPresenceChange`), or new users join (`onUserAdded`) all we have to do is call `forceUpdate` which tells React to evaluate `currentRoom.users` and update the UI.
 
 Again, it really boils down to wiring some simple data and events to React components and that's all, folks!
 
@@ -1203,7 +1196,7 @@ Because we used Chatkit, we also get some bonus features for free:
 * reliability in the case that the client temporarily loses connection (Chatkit handles disconnects gracefully); and,
 * the ability to scale without needing to worry about infrastructure
 
-We wrote a fair amount of code, but none of it was particularly complicated. 
+We wrote a fair amount of code, but none of it was particularly complicated.
 
 Chatkit has a minimal but powerful API that manages all our chat data for us. All we had to do is take that data and render it for the user.
 
