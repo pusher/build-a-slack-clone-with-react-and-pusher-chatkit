@@ -410,11 +410,11 @@ Again, starting from the top:
 
 When using Chatkit, all messages are sent to a Chatkit room.
 
-Rooms can be created programmatically (on the server or client using `createRoom`), or in the dashboard Inspector tab.
+Rooms can be created programmatically (on the server or client using `createRoom`), or in the dashboard Inspector.
 
 Creating rooms from the Inspector isn't really a good practice (it's mainly intended for testing) but for the purpose of this walkthrough, we'll do it anyway.
 
-In the dashboard, head to the **Inspector** tab and create a user with any name. I will call mine "Admin".
+In the dashboard, head to the **Console** tab, where you'll find the Inspector and create a user with any name. I will call mine "Admin".
 
 Then, create a room called "General":
 
