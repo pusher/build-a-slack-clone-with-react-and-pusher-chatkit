@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Chatkit from '@pusher/chatkit'
+import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 import SendMessageForm from './components/SendMessageForm'
 import TypingIndicator from './components/TypingIndicator'
@@ -45,10 +45,10 @@ class ChatScreen extends Component {
       .then(currentUser => {
         this.setState({ currentUser })
         return currentUser.subscribeToRoom({
-          roomId: 7043716,
+          roomId: '7043716',
           messageLimit: 100,
           hooks: {
-            onNewMessage: message => {
+            onMessage: message => {
               this.setState({
                 messages: [...this.state.messages, message],
               })
@@ -65,8 +65,7 @@ class ChatScreen extends Component {
                 ),
               })
             },
-            onUserCameOnline: () => this.forceUpdate(),
-            onUserWentOffline: () => this.forceUpdate(),
+            onPresenceChange: () => this.forceUpdate(),
             onUserJoined: () => this.forceUpdate(),
           },
         })
