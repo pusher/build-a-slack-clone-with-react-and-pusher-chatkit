@@ -65,7 +65,7 @@ Rather than start from absolute scratch, this walkthrough is based on a minimal 
 
 As you can see, the starter template doesn't contain any interesting logic - just boilerplate we need to run a React application and a simple Node server.
 
-> **"Server? No one mentioned a server!"** 
+> **"Server? No one mentioned a server!"**
 >
 > If you're not too familiar with [Node](https://nodejs.org/en/), don't worry 😊. After the next section, we won't need to touch the server.
 
@@ -129,10 +129,10 @@ app.use(cors())
 +app.post('/users', (req, res) => {
 +  const { username } = req.body
 +  chatkit
-+    .createUser({ 
-+	id: username, 
-+	name: username 
-+     })
++    .createUser({
++      id: username,
++      name: username
++    })
 +    .then(() => res.sendStatus(201))
 +    .catch(error => {
 +      if (error.error_type === 'services/chatkit/user_already_exists') {
@@ -285,7 +285,7 @@ To do that, we first need to create a `ChatsScreen.js` component in `./src`:
 ```diff
 +import React, { Component } from 'react'
 +
-+class ChatScreen extends Component {  
++class ChatScreen extends Component {
 +  render() {
 +    return (
 +      <div>
@@ -501,7 +501,7 @@ class ChatScreen extends Component {
 +            <h2>Who's online PLACEHOLDER</h2>
 +          </aside>
 +          <section style={styles.chatListContainer}>
-+            <h2>Chat PLACEHOLDER</h2>         
++            <h2>Chat PLACEHOLDER</h2>
 +          </section>
 +        </div>
 +      </div>
@@ -631,7 +631,7 @@ class ChatScreen extends Component {
       <div style={styles.container}>
         <div style={styles.chatContainer}>
           <aside style={styles.whosOnlineListContainer}>
-			<h2>Who's online PLACEHOLDER</h2>
+            <h2>Who's online PLACEHOLDER</h2>
           </aside>
           <section style={styles.chatListContainer}>
 -            <h2>Chat PLACEHOLDER</h2>
@@ -647,7 +647,6 @@ class ChatScreen extends Component {
 }
 
 export default ChatScreen
-
 ```
 
 Remember to replace **YOUR ROOM ID** with your own room ID that you noted earlier.
@@ -800,7 +799,7 @@ class ChatScreen extends Component {
       <div style={styles.container}>
         <div style={styles.chatContainer}>
           <aside style={styles.whosOnlineListContainer}>
-			<h2>Who's online PLACEHOLDER</h2>
+            <h2>Who's online PLACEHOLDER</h2>
           </aside>
           <section style={styles.chatListContainer}>
             <MessageList
@@ -1181,9 +1180,9 @@ class ChatScreen extends Component {
 export default ChatScreen
 ```
 
-Managing the state of your users in  React state can be a bit tricky so we manage it for you in `currentRoom.users`. 
+Managing the state of your users in  React state can be a bit tricky so we manage it for you in `currentRoom.users`.
 
-As users connect and disconnect, this property is dynamically updated. In other words, `currentRoom.users` should always refelect the current state of your chat app. 
+As users connect and disconnect, this property is dynamically updated. In other words, `currentRoom.users` should always refelect the current state of your chat app.
 
 Therefore, when users come online (`userCameOnline`) or go offline (`userWentOffline`) all we have to do is call `forceUpdate` which tells React to evaluate  `currentRoom.usrs` and update the UI.
 
@@ -1203,7 +1202,7 @@ Because we used Chatkit, we also get some bonus features for free:
 * reliability in the case that the client temporarily loses connection (Chatkit handles disconnects gracefully); and,
 * the ability to scale without needing to worry about infrastructure
 
-We wrote a fair amount of code, but none of it was particularly complicated. 
+We wrote a fair amount of code, but none of it was particularly complicated.
 
 Chatkit has a minimal but powerful API that manages all our chat data for us. All we had to do is take that data and render it for the user.
 
