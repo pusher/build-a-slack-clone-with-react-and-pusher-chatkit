@@ -279,7 +279,7 @@ At the moment, we render the `UsernameForm` and it occupies the entire screen (s
 
 Once the username has been submitted, we'll want to transition to a different screen - namely, the chat screen.
 
-To do that, we first need to create a `ChatsScreen.js` component in `./src`:
+To do that, we first need to create a `ChatScreen.js` component in `./src`:
 
 
 ```diff
@@ -303,7 +303,7 @@ Then update `App.js`:
 ```diff
 import React, { Component } from 'react'
 import UsernameForm from './components/UsernameForm'
-+ import ChatScreen from './ChatScreen'
++import ChatScreen from './ChatScreen'
 
 class App extends Component {
   constructor() {
