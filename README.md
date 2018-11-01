@@ -609,7 +609,7 @@ class ChatScreen extends Component {
 +          roomId: "YOUR ROOM ID",
 +          messageLimit: 100,
 +          hooks: {
-+            onNewMessage: message => {
++            onMessage: message => {
 +              this.setState({
 +                messages: [...this.state.messages, message],
 +              })
@@ -656,8 +656,8 @@ Let's break it down:
 * Once you connect to Chatkit you get a `currentUser` object that represents the current connected user
 * Chatkit is "user-driven" meaning that most if not all interactions happen on the `currentUser`
 * In this case, we call `subscribeToRoom` on the `currentUser` (`currentUser.subscribeToRoom`)
-* `subscribeToRoom` takes an event handler called `onNewMessage` that is called in real-time each time a new message arrives
-* Because we specified the `messageLimit` to be `100`, `onNewMessage` is also called _retroactively_ for up to `100` most recent messages. In practice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
+* `subscribeToRoom` takes an event handler called `onMessage` that is called in real-time each time a new message arrives
+* Because we specified the `messageLimit` to be `100`, `onMessage` is also called _retroactively_ for up to `100` most recent messages. In practice, this means if you refresh the page you'll see up to `100` of the most recent chat messages
 * There is a fair amount of code here but once you break it down, all we're doing is taking new messages and updating the React state - the significant chat-related code couldn't be more minimal
 
 ## Step 10. Sending messages
@@ -776,7 +776,7 @@ class ChatScreen extends Component {
           roomId: YOUR ROOM ID,
           messageLimit: 100,
           hooks: {
-            onNewMessage: message => {
+            onMessage: message => {
               this.setState({
                 messages: [...this.state.messages, message],
               })
@@ -907,7 +907,7 @@ class ChatScreen extends Component {
           roomId: YOUR ROOM ID,
           messageLimit: 100,
           hooks: {
-            onNewMessage: message => {
+            onMessage: message => {
               this.setState({
                 messages: [...this.state.messages, message],
               })
