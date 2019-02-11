@@ -135,7 +135,7 @@ app.use(cors())
 +    })
 +    .then(() => res.sendStatus(201))
 +    .catch(error => {
-+      if (error.error_type === 'services/chatkit/user_already_exists') {
++      if (error.error === 'services/chatkit/user_already_exists') {
 +        res.sendStatus(200)
 +      } else {
 +        res.status(error.status).json(error)
@@ -166,7 +166,7 @@ There's a lot to unpack here, starting from the top:
 * First, we import `Chatkit` from `@pusher/chatkit-server`
 * Then, instantiate our own `chatkit` instance using the **Instance Locator** and **Key** we noted in the previous step
 * In the `/users` route, we take a `username` and create a Chatkit user through our `chatkit` instance
-* Authentication is the action of proving a user is who she says she is. When someone first connects to Chatkit, a request will be sent to `/authenticate` to authenticate them. The server needs to respond with a token (returned by `chatkit.authenticate`) if the request is valid. In our case, we'll - naïvely - assume that everyone is who they say they are, and return a token from `chatkit.authenticate` no matter what
+* Authentication is the action of proving a user is who she says she is. When someone first connects to Chatkit, a request will be sent to `/authenticate` to authenticate them. The server needs to respond with a token (returned by `chatkit.authenticate`) if the request is valid. In our case, we'll - naïvely - assume that everyone is who they say they are, and return a token from `chatkit.authenticate` no matter what.
 
 Boom 💥! That's all we need to do on the server. Let's move on to the client...
 
@@ -270,7 +270,7 @@ Starting from the top of `App.js`:
 
 * First, we import the `UsernameForm` component. It probably looks familiar to you because it uses a common React pattern called controlled components. You can read more about  React forms [here](https://reactjs.org/docs/forms.html)
 * In the `render` function we render the `UsernameForm` and hook up the `onUsernameSubmitted` event handler
-* When `onUsernameSubmitted` is called, we send a POST request to the `/users` route we just defined. If the request is successful, we update `this.state.username` so we can reference it later; otherwise, we `console.error` the error
+* When `onUsernameSubmitted` is called, we send a POST request to the `/users` route we just defined. If the request is successful, we update `this.state.currentUsername` so we can reference it later; otherwise, we `console.error` the error
 
 
 ## Step 5. Render the chat screen
@@ -1127,8 +1127,7 @@ class ChatScreen extends Component {
               })
             },
 +            onPresenceChange: () => this.forceUpdate(),
-+            onUserJoined: () => this.forceUpdate(),
-+          },
+          },
         })
       })
       .then(currentRoom => {
